@@ -1,0 +1,55 @@
+﻿<Controls:MetroWindow x:Class="Pedestrians_Tracking.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns:local="clr-namespace:Pedestrians_Tracking"
+        mc:Ignorable="d"
+        Title="PeDetection" Loaded="MetroWindow_Loaded" Icon="iccon.ico" Height="600" Width="600" MinWidth="450" MinHeight="450" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="245*"/>
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+        <Border Grid.Row="1" Grid.ColumnSpan="2" Margin="1" BorderThickness="2" BorderBrush="#FF363636">
+            <Image Name="MainScreen"/>
+        </Border>
+        <Grid Grid.ColumnSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="150"/>
+                <ColumnDefinition Width="143*"/>
+                <ColumnDefinition Width="200"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="0" Name="StopBut" Content="Stop" Margin="2" Click="StopBut_Click"/>
+                <Button Grid.Column="1" Name="StartBut" Content="Start" Margin="2" Click="StartBut_Click"/>
+                <Button Grid.Column="2" Name="OpenBut"  Content="Open" Margin="2" Click="OpenBut_Click"/>
+            </Grid>
+            <Controls:ToggleSwitch Click="InitModeSwitch_Click" Name="InitModeSwitch" HorizontalAlignment="Center" Content="" VerticalAlignment="Center" Margin="36,0,41,0" HorizontalContentAlignment="Center" Height="30" Width="73"></Controls:ToggleSwitch>
+            <Label Content="HOG" HorizontalAlignment="Left" VerticalAlignment="Center" Height="26" Margin="0,2" Width="36"/>
+            <Label Content="HAAR" HorizontalAlignment="Right" VerticalAlignment="Center" Height="26" Margin="0,2" Width="41"/>
+        </Grid>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="60"/>
+                <ColumnDefinition Width="60"/>
+                <ColumnDefinition Width="60"/>
+                <ColumnDefinition Width="60"/>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="80"/>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Column="0" Content="Scale"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Roboto"/>
+            <Label Grid.Column="2" Content="VerNum" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Roboto"/>
+            <TextBox Grid.Column="1" Name="ScaleBox" Margin="2" TextAlignment="Right" />
+            <TextBox Grid.Column="3" Name="VerNumBox" Margin="2" TextAlignment="Right" />
+            <Button Grid.Column="5" Name="SaveButton" Margin="2" Content="Save" Click="SaveButton_Click"/>
+        </Grid>
+    </Grid>
+</Controls:MetroWindow>
